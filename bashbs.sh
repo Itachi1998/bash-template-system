@@ -4,10 +4,10 @@ usage(){
  >&2 echo "Usage: $0 <project>"
  return 0
 }
-pname= $1
-pdir = "./${pname}"
-tdir= /templates
-pdir= 
+pname=$1
+pdir="./${pname}"
+tdir=/var/bash.bs/templates
+
 
 if [ -z "$pname" ]; then
    usage
@@ -21,10 +21,20 @@ elif [ -d "$pdir" ]; then
 fi
 
 cur="$PWD"
-cd $dir
+cd $tdir
 echo "Select a template"
 select x in *; do
    template="$x"
    break
 done
 
+cd $cur
+cp -R ${tdir}/$template $pdir
+cd $pdir
+for x in *; do
+  new=$(sed "s,PROJECTNAME,$pname,g" <<< "$x")
+  sed "s,PROJECTNAME,$pname,g" < $x > $new
+  if [ -e "$new" ]; then
+      rm -f $x
+  fi
+done
