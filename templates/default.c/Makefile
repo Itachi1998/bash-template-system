@@ -1,0 +1,5 @@
+flags=
+ldflags=
+
+
+PROJECTNAME.o: PROJECTNAME.c PROJECTNAME.h
