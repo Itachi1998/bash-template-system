@@ -1,6 +1,9 @@
 #!/bin/bash
 
-
+usage(){
+ >&2 echo "Usage: $0 <project>"
+ exit 4
+}
 pname= $1
 pdir = "./${pname}"
 tdir= /templates
