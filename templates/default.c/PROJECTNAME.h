@@ -9,3 +9,16 @@
 #include <errno.h>
 #include <birchutils.h>
 
+typedef unsigned char int8;
+typedef unsigned short int int16;
+typedef unsigned int int32;
+typedef unsigned long long int int64;
+
+#define $8 (int8 *)
+#define $6 (int16)
+#define $2 (int32)
+#define $4 (int64)
+#define $c (char *)
+
+int main(int, char**);
+
