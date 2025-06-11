@@ -7,10 +7,10 @@ ldflags=-lbu
 all: clean PROJECTNAME
 
 PROJECTNAME: PROJECTNAME.o
-     cc $(flags) $^ -o $@ $(ldflags)
+    cc $(flags) $^ -o $@ $(ldflags)
 
 PROJECTNAME.o: PROJECTNAME.c PROJECTNAME.h
-      cc $(flags) -c $<
+    cc $(flags) -c $<
 
 clean:
-   rm -f *.o PROJECTNAME
+    rm -f *.o PROJECTNAME
