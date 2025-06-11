@@ -6,7 +6,7 @@ usage(){
 }
 pname=$1
 pdir="./${pname}"
-tdir=/var/bash.sh/templates
+tdir=/var/bash.bs/templates
 
 
 if [ -z "$pname" ]; then
